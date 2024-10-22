@@ -2,6 +2,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:planet_app/modules/home/home_screen.dart';
+import 'package:planet_app/resources/themes/light_theme.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -14,7 +16,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: AppStartPoint(),
+      home: const AppStartPoint(),
+      theme: lightTheme(),
     );
   }
 }
@@ -27,16 +30,15 @@ class _MyAppState extends State<MyApp> {
 
 
 class AppStartPoint extends StatelessWidget {
-  AppStartPoint({Key? key}) : super(key: key);
+  const AppStartPoint({super.key});
 
 
-  // Widget startPoint = const OnBoardingScreen();
+  final Widget startPoint = const HomeScreen();
 
   @override
   Widget build(BuildContext context) {
-    // onBoardDone==null?startPoint = const OnBoardingScreen():const OnBoardingScreen();
 
 
-    return const Scaffold();
+    return startPoint;
   }
 }
